@@ -18,6 +18,8 @@ express()
     let url = req.body.url;
     let id = url.split("=")[1];
 
+    let msg = "  Check this after approximately " + (req.body.count*2)/60 + " minutes.  " + url;
+
     while (i < req.body.count) {
         let options = {
             'method': 'POST',
@@ -35,9 +37,8 @@ express()
         request(options, function (error, response) {
             if (error) throw new Error(error);
             console.log(response.body);
-            res.end(response.body);
+            res.end(response.body + msg);
         });
-
         i++;
     }
   })
