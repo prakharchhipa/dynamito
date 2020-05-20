@@ -1,0 +1,8 @@
+{
+  "name": "Dynamito",
+  "description": "A misc node service Node.js app using Express 4 for personal use",
+  "repository": "https://github.com/prakharchhipa/dynamito",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
