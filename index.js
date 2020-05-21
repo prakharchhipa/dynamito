@@ -6,6 +6,8 @@ let bodyParser = require('body-parser');
 
 let request = require('request');
 
+let cors = require('cors');
+
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 express()
@@ -13,6 +15,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .use(cors())
   .use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
     res.header("Access-Control-Allow-Credentials", true);
