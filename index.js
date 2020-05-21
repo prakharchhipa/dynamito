@@ -48,6 +48,28 @@ express()
             if (error) throw new Error(error);
             console.log(response.body);
         });
+
+        let optionsRating = {
+            'method': 'POST',
+            'url': 'https://iccr4art.com/rating_ajax.php',
+            'headers': {
+                'Accept': '*/*',
+                'Content-Type': ['application/x-www-form-urlencoded; charset=UTF-8', 'text/plain'],
+                'X-Requested-With': 'XMLHttpRequest',
+                'Origin': 'https://iccr4art.com',
+                'Referer': 'https://iccr4art.com/gallery-detail.php?id=4461',
+                'Cache-Control': 'no-cache',
+                'TE': 'Trailers'
+            },
+            body: "postid=" + id + "&rating=5"
+
+        };
+        request(optionsRating, function (error, response) {
+            if (error) throw new Error(error);
+            console.log("Rating 5");
+        });
+
+
         i++;
     }
     res.send(msg);
