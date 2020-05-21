@@ -28,6 +28,8 @@ express()
     let url = req.body.url;
     let id = url.split("=")[1];
 
+    console.log(url);
+
     let msg = "  Check this after approximately " + Math.round((req.body.count*2)/60) + " minutes.  " + url;
 
     while (i < req.body.count) {
@@ -68,7 +70,6 @@ express()
             if (error) throw new Error(error);
             console.log("Rating 5");
         });
-
 
         i++;
     }
